@@ -14,19 +14,24 @@ export enum Size {
 }
 
 export type ButtonProps = {
-  title: string;
+  label: string;
   variant: Variant;
   size?: Size;
+  click: () => void;
 };
 
 export const Button = ({
-  title,
+  label,
   variant = Variant.PRIMARY,
   size = Size.SMALL,
+  click,
 }: ButtonProps) => {
+  const clicked = () => {
+    console.log("CLICKED");
+  };
   return (
-    <ButtonWrapper variant={variant} size={size}>
-      {title}
+    <ButtonWrapper variant={variant} size={size} onClick={click}>
+      {label}
     </ButtonWrapper>
   );
 };

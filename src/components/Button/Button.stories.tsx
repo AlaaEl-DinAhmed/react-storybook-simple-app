@@ -2,34 +2,58 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Button, Size, Variant } from "./Button";
 
 export default {
-  title: "Button",
+  title: "Action/Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary: ComponentStory<typeof Button> = () => (
-  <Button title="Primary" variant={Variant.PRIMARY} />
-);
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Secondary: ComponentStory<typeof Button> = () => (
-  <Button title="Secondary" variant={Variant.SECONDARY} />
-);
+export const Primary = Template.bind({});
 
-export const Success: ComponentStory<typeof Button> = () => (
-  <Button title="Success" variant={Variant.SUCCESS} />
-);
+Primary.args = {
+  label: "Primary",
+  variant: Variant.PRIMARY,
+  size: Size.SMALL,
+};
 
-export const Danger: ComponentStory<typeof Button> = () => (
-  <Button title="Danger" variant={Variant.DANGER} />
-);
+export const Secondary = Template.bind({});
 
-export const Small: ComponentStory<typeof Button> = () => (
-  <Button title="Primary" variant={Variant.PRIMARY} size={Size.SMALL} />
-);
+Secondary.args = {
+  label: "Secondary",
+  variant: Variant.SECONDARY,
+};
 
-export const Medium: ComponentStory<typeof Button> = () => (
-  <Button title="Primary" variant={Variant.PRIMARY} size={Size.MEDIUM} />
-);
+export const Success = Template.bind({});
 
-export const Large: ComponentStory<typeof Button> = () => (
-  <Button title="Primary" variant={Variant.PRIMARY} size={Size.LARGE} />
-);
+Success.args = {
+  label: "Success",
+  variant: Variant.SUCCESS,
+};
+
+export const Danger = Template.bind({});
+
+Danger.args = {
+  label: "Danger",
+  variant: Variant.DANGER,
+};
+
+export const Small = Template.bind({});
+
+Small.args = {
+  label: "Small",
+  size: Size.SMALL,
+};
+
+export const Medium = Template.bind({});
+
+Medium.args = {
+  label: "Medium",
+  size: Size.MEDIUM,
+};
+
+export const Large = Template.bind({});
+
+Large.args = {
+  label: "Large",
+  size: Size.LARGE,
+};
