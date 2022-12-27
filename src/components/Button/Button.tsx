@@ -17,20 +17,17 @@ export type ButtonProps = {
   label: string;
   variant: Variant;
   size?: Size;
-  click: () => void;
+  onClick: () => void;
 };
 
 export const Button = ({
   label,
   variant = Variant.PRIMARY,
   size = Size.SMALL,
-  click,
+  onClick,
 }: ButtonProps) => {
-  const clicked = () => {
-    console.log("CLICKED");
-  };
   return (
-    <ButtonWrapper variant={variant} size={size} onClick={click}>
+    <ButtonWrapper variant={variant} size={size} onClick={onClick}>
       {label}
     </ButtonWrapper>
   );
